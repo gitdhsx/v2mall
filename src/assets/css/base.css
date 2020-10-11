@@ -1,0 +1,79 @@
+@charset "UTF-8";
+/* @import url(normalize.min.css); */
+@import "./normalize.css";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+/*:root ->*/
+
+:root {
+  --color-text: #666;
+  --color-high-text: #ff5777;
+  --color-tint: #ff8198;
+  --color-background: #fff;
+  --font-size: 14px;
+  --line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  font-family: -apple-system, "MIUI";
+  user-select: none;
+  width: 100vw;
+  height: 100%;
+  color: var(--color-text);
+  background: var(--color-background);
+  font-size: 14px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
+a {
+  text-decoration: none;
+  color: var(--color-text); }
+
+  /* TODO 清除浮动?? */
+.clear-fix:after {
+  font-size: 0;
+  display: block;
+  clear: both;
+  height: 0;
+  content: ""; }
+
+.arrow-right {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 0.1rem;
+  transform: rotate(135deg);
+  border-top: 1px solid #999999;
+  border-left: 1px solid #999999;
+  background-color: transparent; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+#app {
+  font-size: 16px;
+  overflow-x: hidden;
+  width: 100%;
+  height: 100%; }
+
+.nowrap {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
+
+/*# sourceMappingURL=base.css.map */
