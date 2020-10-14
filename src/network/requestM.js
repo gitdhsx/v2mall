@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export function request(config) {
+export function requestA(config) {
   //1. 创建实例 
   const instance = axios.create({
     baseURL: 'http://123.207.32.32:8000',
@@ -16,6 +16,7 @@ export function request(config) {
   })
 
   instance.interceptors.response.use(res => {
+    // console.log(5555555);
     // console.log(res);
     // return res
     return res.data

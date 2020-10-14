@@ -18,7 +18,7 @@
       padding: 20px;
       outline: 10px solid green;
       background-color: #000;
-      float:
+      /* float: */
     }
 
     .in-bl{
@@ -104,9 +104,69 @@
 
 
   <script>
-    var num = Number(0.95/4*100).toFixed(2) 
+    var num = Number(0.9/4*100).toFixed(2) 
     console.log( num += '%'); 
-    
+
+    var arr1 = ["ab","bc","de","fg"];
+    var arr2 = ["ml","kg","ww","bc","am"];
+    var arr3 = arr1.concat(arr2);
+    console.log(arr3)
+
+    const mockHomeData = function(type, page){
+      const goods = {
+        'pop': { page: 0, list: []},
+        'new': { page: 0, list: []},
+        'sell': { page: 0, list: []},
+      };
+      goods[type].page = page;
+      goods[type].list = [1,2,3]
+      console.log(goods);
+    }('pop', 1)
+
+    const nl = []
+    const tl = [{a: 1, b: 2}, {c: 1, d: 3}, {e: 2, f: 3}]
+    console.log(nl.concat(tl))
+
+    // var parse_url = /^(?:([A-Za-z]+):)?(//{0,3})([0-9./-A-Za-z]+)(?::(/d+))?(?://([^?#]*))?(?:/?([^#]*))?(?:#(.*))?$/;  
+
+    // var url = "http://www.baidu.com/?loehuang";  
+    // var result = parse_url.exec(url);  
+
+    // var names = ['url','scheme','slash','host','port','path','query','hash'];  
+
+    // var blanks = "         ";  
+    // for(var i=0;i<names.length;i++){  
+    //   document.writeln(names[i] + ":" +        blanks.substring(names[i].length),result[i])  
+    // }  
+    var ACWS = {}
+    ACWS.getQueryJson = function(){  
+    var ret = {};//定义数组  
+    window.location.search.substr(1).replace(/(\w+)=(\w+)/ig, function(a, b, c){ret[b] = unescape(c);});  
+    return ret;  
+    }  
+    ACWS.URL_PARAM=ACWS.getQueryJson();  
+    //王德封： URL参数取得(改造并保留原有接口)  
+    function getQueryString(name) {  
+        return ACWS.URL_PARAM[name];  
+    } 
+    const testUrl = 'http://www.abc.com/book/shell?cover=red&page=2'
+    console.log(getQueryString(testUrl));
+
+    var mylocation = {
+    'protocol':'',
+    'hostname':'',
+    'pathname':'',
+    'query':''
+    }
+    var url = 'http://adtk.cn/index.html?key1=1&key2=2';
+    var arr=url.split(/\:\/\/|\/|\?/g);
+    var j=0;
+    for(i in mylocation){
+    mylocation[i]=arr[j];
+    j++;
+    }
+    console.log(mylocation);
+
   </script>
 
 </body>

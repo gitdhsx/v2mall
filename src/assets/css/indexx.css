@@ -27,7 +27,7 @@ a {
 }
 
 a:before{
-  content: "";
+  content: "<br><br><br><br>";
   position: absolute;
   left: -5px;
   right: -5px;
