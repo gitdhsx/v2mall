@@ -1,9 +1,9 @@
 <template>
   <div class="goods-item">
-    <img  :src="goodsItem.image">
+    <img  :src="goodsItem.image" @load="imageLoad">
     <div class="goods-info">
       <p>{{goodsItem.title}}</p>
-      <span class="price">${{goodsItem.price}}</span>
+      <span class="price">￥{{goodsItem.price}}</span>
       <span class="collect">{{goodsItem.cfav}}</span>
     </div>
   </div>
@@ -15,6 +15,12 @@ export default {
   props: {
     goodsItem: {
       type:Object
+    }
+  },
+  methods: {
+    imageLoad() {
+      // console.log('imageLoadddemit');
+      this.$bus.$emit('itemImageLoad')
     }
   }
 }

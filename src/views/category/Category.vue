@@ -1,13 +1,18 @@
 <template>
-  <h2>
+  <div id="category">
     <div class="sc-wrapper" ref='aaa'>
       <div class="container">
-        <ul v-for="(item, index) in 200" :key=index>
-         <li height='20px'>{{item}}</li>
+        <ul >
+         <li v-for="(item, index) in 100" :key=index height='20px'>{{item}}</li>
         </ul>
       </div>
     </div>
-  </h2>
+    <div class="ddd">
+        <ul >
+         <li v-for="(item, index) in 100" :key=index height='20px'>{{item*1000}}</li>
+        </ul>
+    </div>
+  </div>
 
 </template>
 
@@ -28,23 +33,27 @@ export default {
     }
   },
   mounted(){
-    console.log(document.querySelector('.sc-wrapper'));
-    console.log(this.$refs['aaa']);
-    setTimeout(()=>{
-      this.isShow = true
-      this.bsc = new BScroll(this.$refs['aaa'], {
+    // console.log(document.querySelector('.sc-wrapper'));
+    // console.log(this.$refs.aaa);
+    this.bsc = new BScroll(this.$refs.aaa, {
+        probeType:2
       })
-    }, 1000)
   },
   watch: {
  }
 }
 </script>
 
-<style>
+<style scoped>
+#category {
+  overflow: hidden;
+  color: darkorchid;
+  height: 100vh;
+  font-size: 20px;
+}
 .sc-wrapper {
   background-color: red;
-  height: 300px;
+  height: 500px;
   overflow: hidden;
   /* overflow-y: scroll; */
 }

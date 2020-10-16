@@ -17,7 +17,7 @@ export function mockHomeData (options){
   let size = [
     '400x534', '750x1000'
   ]
-	for (let i = 0; i < 10; i++) {
+	for (let i = 0; i < 20; i++) {
 		let pop = {
 			title: Random.csentence(5, 30), //  Random.csentence( min, max )
 			thumbnail_pic_s: Random.dataImage('300x250', 'mock的图片'), // Random.dataImage( size, text ) 生成一段随机的 Base64 图片编码
